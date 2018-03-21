@@ -2,6 +2,7 @@ package com.bignerdranch.android.geoquiz;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,7 +20,11 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //doNothing but soon
-                Toast.makeText(QuizActivity.this, R.string.correct_toast,Toast.LENGTH_SHORT).show();
+               Toast toast = Toast.makeText(QuizActivity.this, R.string.correct_toast,Toast.LENGTH_SHORT);
+                toast .setGravity(Gravity.CENTER,0,0);
+                toast.show();
+
+
             }
         });
         mFalseButton.setOnClickListener(new View.OnClickListener() {
@@ -27,7 +32,9 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //DoNothing but soon
 
-                Toast.makeText(QuizActivity.this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show();
+             Toast toast =   Toast.makeText(QuizActivity.this, R.string.incorrect_toast, Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER,10,10);
+                toast.show();
             }
         });
 
